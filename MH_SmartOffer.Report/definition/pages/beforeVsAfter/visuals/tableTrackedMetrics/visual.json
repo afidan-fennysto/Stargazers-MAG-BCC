@@ -1,0 +1,414 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "tableTrackedMetrics",
+  "position": {
+    "x": 24,
+    "y": 706,
+    "z": 25000,
+    "height": 172,
+    "width": 1392,
+    "tabOrder": 25000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "Group_Name"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.Group_Name",
+              "nativeQueryRef": "Group_Name",
+              "displayName": "Group"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "Buyers %"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.Buyers %",
+              "nativeQueryRef": "Buyers %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "Spend per Pax (RM)"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.Spend per Pax (RM)",
+              "nativeQueryRef": "Spend per Pax (RM)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "Route Conversion %"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.Route Conversion %",
+              "nativeQueryRef": "Route Conversion %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "Offer Accept %"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.Offer Accept %",
+              "nativeQueryRef": "Offer Accept %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "Click-Through %"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.Click-Through %",
+              "nativeQueryRef": "Click-Through %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "Revenue per Offer (RM)"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.Revenue per Offer (RM)",
+              "nativeQueryRef": "Revenue per Offer (RM)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "CSI %"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.CSI %",
+              "nativeQueryRef": "CSI %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MH_SmartOffer_PowerBI_Pilot_Data"
+                    }
+                  },
+                  "Property": "Refund %"
+                }
+              },
+              "queryRef": "MH_SmartOffer_PowerBI_Pilot_Data.Refund %",
+              "nativeQueryRef": "Refund %"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E2E8F0'"
+                    }
+                  }
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F2942'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F1F5F9'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#334155'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E2E8F0'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'All 8 Metrics MAG''s Data Team Tracks'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F2942'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

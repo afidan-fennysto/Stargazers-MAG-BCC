@@ -1,0 +1,42 @@
+table 'Offer Compare'
+	lineageTag: 6451d872-d0d2-503c-9bc0-ac808326a193
+
+	measure 'Offer Result' =
+			VAR _metric = SELECTEDVALUE('Offer Compare'[Metric])
+			VAR _offer = SELECTEDVALUE('Offer Compare'[Offer_Type])
+			RETURN
+			    CALCULATE(
+			        SWITCH(
+			            TRUE(),
+			            _metric = "Offer Accept Rate (%)" && _offer = "Bundle", AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Bundle_Accept_Pct]),
+			            _metric = "Offer Accept Rate (%)" && _offer = "Single Add-On", AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Single_Accept_Pct]),
+			            _metric = "Revenue per Offer (RM)" && _offer = "Bundle", AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Bundle_Rev_RM]),
+			            _metric = "Revenue per Offer (RM)" && _offer = "Single Add-On", AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Single_Rev_RM])
+			        ),
+			        MH_SmartOffer_PowerBI_Pilot_Data[Group_Name] = "With Our AI System"
+			    )
+		formatString: 0.0
+		lineageTag: df2b403c-4d07-56fc-954b-b8bb60d5926e
+
+	column Metric
+		dataType: string
+		lineageTag: db84893e-f497-5799-9d1d-570ae3893bab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Metric]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Offer_Type
+		dataType: string
+		lineageTag: a6b083c0-6db9-5855-bfd2-665da32d6361
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Offer_Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Offer Compare' = calculated
+		mode: import
+		source = DATATABLE("Metric", STRING, "Offer_Type", STRING, {{"Offer Accept Rate (%)", "Bundle"}, {"Offer Accept Rate (%)", "Single Add-On"}, {"Revenue per Offer (RM)", "Bundle"}, {"Revenue per Offer (RM)", "Single Add-On"}})
+

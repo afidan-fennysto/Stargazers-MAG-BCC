@@ -1,0 +1,245 @@
+table MH_SmartOffer_PowerBI_Pilot_Data
+	lineageTag: 5c310fc1-be8a-531d-8700-ce4771272d1d
+
+	measure 'AI Buyers %' = CALCULATE(AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Buyers_Pct]), MH_SmartOffer_PowerBI_Pilot_Data[Group_Name] = "With Our AI System")
+		formatString: 0.0\%
+		displayFolder: 1. Old vs AI
+		lineageTag: 8f6469b7-b47f-5f58-8ba3-c4263254c29e
+
+	measure 'Old Buyers %' = CALCULATE(AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Buyers_Pct]), MH_SmartOffer_PowerBI_Pilot_Data[Group_Name] = "Old Way (Static)")
+		formatString: 0.0\%
+		displayFolder: 1. Old vs AI
+		lineageTag: f88e2e29-78ff-5962-a340-67e128b4fd1f
+
+	measure 'Buyer Lift (pp)' = [AI Buyers %] - [Old Buyers %]
+		formatString: \+0.0\ \p\p;\-0.0\ \p\p;0.0\ \p\p
+		displayFolder: 1. Old vs AI
+		lineageTag: cb9d5026-7347-5aa1-818d-3572fb02d635
+
+	measure 'AI Spend RM' = CALCULATE(AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Spend_Per_Pax_RM]), MH_SmartOffer_PowerBI_Pilot_Data[Group_Name] = "With Our AI System")
+		formatString: \R\M\ #,0.00
+		displayFolder: 1. Old vs AI
+		lineageTag: eb768755-235e-5541-82d3-78feace2ff0d
+
+	measure 'Old Spend RM' = CALCULATE(AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Spend_Per_Pax_RM]), MH_SmartOffer_PowerBI_Pilot_Data[Group_Name] = "Old Way (Static)")
+		formatString: \R\M\ #,0.00
+		displayFolder: 1. Old vs AI
+		lineageTag: 3e68e26b-5e2e-5b4c-b7b6-df833b6494ef
+
+	measure 'Spend Lift RM' = [AI Spend RM] - [Old Spend RM]
+		formatString: \+\R\M\ #,0.00;\-\R\M\ #,0.00;\R\M\ 0.00
+		displayFolder: 1. Old vs AI
+		lineageTag: a2f03d99-d507-58ea-bb77-f50e1d3f09bb
+
+	measure 'AI CSI %' = CALCULATE(AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[CSI_Pct]), MH_SmartOffer_PowerBI_Pilot_Data[Group_Name] = "With Our AI System")
+		formatString: 0.0\%
+		displayFolder: 1. Old vs AI
+		lineageTag: c6f6e87c-badb-5462-93e5-a6e6a63cb485
+
+	measure 'Old CSI %' = CALCULATE(AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[CSI_Pct]), MH_SmartOffer_PowerBI_Pilot_Data[Group_Name] = "Old Way (Static)")
+		formatString: 0.0\%
+		displayFolder: 1. Old vs AI
+		lineageTag: ef630339-42b8-5fd5-9045-f8b2938c9aca
+
+	measure 'CSI Lift %' = [AI CSI %] - [Old CSI %]
+		formatString: \+0.0\ \p\p;\-0.0\ \p\p;0.0\ \p\p
+		displayFolder: 1. Old vs AI
+		lineageTag: 42e7126d-c3c9-5e24-9681-546dcf77941e
+
+	measure 'Buyers %' = AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Buyers_Pct])
+		formatString: 0.0\%
+		displayFolder: 3. Tracked metrics
+		lineageTag: 1867c24d-ad33-55e0-ac1d-da93e6e8606f
+
+	measure 'Spend per Pax (RM)' = AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Spend_Per_Pax_RM])
+		formatString: \R\M\ #,0.00
+		displayFolder: 3. Tracked metrics
+		lineageTag: d5ea8357-eac9-502c-bf36-b92a35ab7757
+
+	measure 'Route Conversion %' = AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Route_Conv_Pct])
+		formatString: 0.00\%
+		displayFolder: 3. Tracked metrics
+		lineageTag: 510c3d69-90b6-5d86-98fa-f020694b1094
+
+	measure 'Offer Accept %' = AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Offer_Accept_Pct])
+		formatString: 0.0\%
+		displayFolder: 3. Tracked metrics
+		lineageTag: 0594d5dc-eba3-5387-a422-a7417d695c56
+
+	measure 'Click-Through %' = AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[CTR_Pct])
+		formatString: 0.0\%
+		displayFolder: 3. Tracked metrics
+		lineageTag: 5c0ddc8d-8e8d-571b-bc95-77dbca811fcb
+
+	measure 'Revenue per Offer (RM)' = AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Rev_Per_Offer_RM])
+		formatString: \R\M\ #,0.00
+		displayFolder: 3. Tracked metrics
+		lineageTag: 2b965b23-b96d-5557-90e9-4ee1ae44f078
+
+	measure 'CSI %' = AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[CSI_Pct])
+		formatString: 0.0\%
+		displayFolder: 3. Tracked metrics
+		lineageTag: 7c4615d5-0125-585e-8cf2-214d0c8f0db3
+
+	measure 'Refund %' = AVERAGE(MH_SmartOffer_PowerBI_Pilot_Data[Refund_Pct])
+		formatString: 0.0\%
+		displayFolder: 3. Tracked metrics
+		lineageTag: 29b2f4d2-a5a2-594d-a58b-2171deb6b1be
+
+	column Route_Type
+		dataType: string
+		lineageTag: 89037b0b-d861-5ab2-8d5f-70c90bb8d847
+		summarizeBy: none
+		sourceColumn: Route_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Passenger_Type
+		dataType: string
+		lineageTag: 9c587651-97db-5577-bd65-55dcf66cf1cd
+		summarizeBy: none
+		sourceColumn: Passenger_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Group_Name
+		dataType: string
+		lineageTag: 37aa38a2-1f35-5f8f-9db0-93b482f9ee94
+		summarizeBy: none
+		sourceColumn: Group_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Passengers
+		dataType: int64
+		formatString: #,0
+		lineageTag: bd02adce-2e14-5968-b385-c100aa80f465
+		summarizeBy: sum
+		sourceColumn: Passengers
+
+		annotation SummarizationSetBy = Automatic
+
+	column Buyers_Pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: c9bd75a2-7842-5400-a6ba-44d897c8cb38
+		summarizeBy: none
+		sourceColumn: Buyers_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Spend_Per_Pax_RM
+		dataType: double
+		formatString: 0.00
+		lineageTag: b024e6cb-146f-5da3-95a4-f67f8517bbd7
+		summarizeBy: none
+		sourceColumn: Spend_Per_Pax_RM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Route_Conv_Pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 1aa4a9e9-541b-524f-9026-761abd763393
+		summarizeBy: none
+		sourceColumn: Route_Conv_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Offer_Accept_Pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: d01555ea-ec7b-53b5-be14-747513258c95
+		summarizeBy: none
+		sourceColumn: Offer_Accept_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column CTR_Pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 06631d76-d874-5dac-aded-26580ffc753d
+		summarizeBy: none
+		sourceColumn: CTR_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rev_Per_Offer_RM
+		dataType: double
+		formatString: 0.00
+		lineageTag: eb0a26c2-2f9f-5499-b40a-4d52f64894c3
+		summarizeBy: none
+		sourceColumn: Rev_Per_Offer_RM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CSI_Pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: c17193e3-c57c-5765-9365-4e8de10608eb
+		summarizeBy: none
+		sourceColumn: CSI_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Refund_Pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 9ceeb676-975b-5e7e-950e-264543d438fc
+		summarizeBy: none
+		sourceColumn: Refund_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bundle_Accept_Pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 3d939de3-d6e8-57bf-ba74-8fd5348c5219
+		summarizeBy: none
+		sourceColumn: Bundle_Accept_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Single_Accept_Pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 9e46364d-4977-512f-989e-1141b9ba0242
+		summarizeBy: none
+		sourceColumn: Single_Accept_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bundle_Rev_RM
+		dataType: double
+		formatString: 0.00
+		lineageTag: 660aa055-14fb-5d01-a497-f108edba146d
+		summarizeBy: none
+		sourceColumn: Bundle_Rev_RM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Single_Rev_RM
+		dataType: double
+		formatString: 0.00
+		lineageTag: 9122414e-fca5-56ff-9e86-03d2f8a6ae72
+		summarizeBy: none
+		sourceColumn: Single_Rev_RM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MH_SmartOffer_PowerBI_Pilot_Data = m
+		mode: import
+		source =
+				let
+				    // Embedded copy of the CSV, used only if the file is not found under DataFolder
+				    EmbeddedCsv = "Route_Type,Passenger_Type,Group_Name,Passengers,Buyers_Pct,Spend_Per_Pax_RM,Route_Conv_Pct,Offer_Accept_Pct,CTR_Pct,Rev_Per_Offer_RM,CSI_Pct,Refund_Pct,Bundle_Accept_Pct,Single_Accept_Pct,Bundle_Rev_RM,Single_Rev_RM#(lf)Short Flights (1-2 hrs),Work / Business,Old Way (Static),730000,14.4,11.24,4.72,16.5,24.5,13.0,84.0,1.5,18.0,14.0,15.0,11.0#(lf)Short Flights (1-2 hrs),Work / Business,With Our AI System,730000,19.5,15.6,4.87,25.9,38.2,20.9,86.7,1.3,30.6,16.6,25.92,12.96#(lf)Short Flights (1-2 hrs),Weekend Shopper,Old Way (Static),640000,11.6,7.24,5.02,13.8,21.0,8.9,83.9,1.8,15.2,11.8,10.4,7.5#(lf)Short Flights (1-2 hrs),Weekend Shopper,With Our AI System,640000,15.9,9.88,5.18,21.5,32.5,13.68,86.1,1.6,25.4,13.8,16.96,8.48#(lf)Long Flights (7+ hrs),Work / Business,Old Way (Static),470000,17.0,22.17,3.84,18.2,26.8,23.4,84.4,1.3,20.5,15.1,26.8,18.2#(lf)Long Flights (7+ hrs),Work / Business,With Our AI System,470000,22.9,30.36,3.94,27.4,40.4,36.69,87.3,1.2,32.3,17.5,45.5,22.75#(lf)Long Flights (7+ hrs),Family Holiday,Old Way (Static),870000,18.2,17.93,4.11,19.0,27.5,19.5,84.1,1.6,21.4,15.6,22.5,15.4#(lf)Long Flights (7+ hrs),Family Holiday,With Our AI System,870000,25.6,25.99,4.28,29.4,40.8,30.93,87.8,1.3,34.7,18.8,38.35,19.18#(lf)Long Flights (7+ hrs),KLIA Transit / Layover,Old Way (Static),310000,14.0,16.2,4.0,17.1,25.0,18.8,83.7,1.5,19.2,14.2,21.6,14.9#(lf)Long Flights (7+ hrs),KLIA Transit / Layover,With Our AI System,310000,22.1,26.4,4.1,28.4,39.8,31.1,88.0,1.2,33.5,18.2,38.56,19.28",
+				    FileBinary = try Binary.Buffer(File.Contents(DataFolder & "\MH_SmartOffer_PowerBI_Pilot_Data.csv")) otherwise Text.ToBinary(EmbeddedCsv, TextEncoding.Utf8),
+				    Source = Csv.Document(FileBinary, [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"Route_Type", type text}, {"Passenger_Type", type text}, {"Group_Name", type text}, {"Passengers", Int64.Type}, {"Buyers_Pct", type number}, {"Spend_Per_Pax_RM", type number}, {"Route_Conv_Pct", type number}, {"Offer_Accept_Pct", type number}, {"CTR_Pct", type number}, {"Rev_Per_Offer_RM", type number}, {"CSI_Pct", type number}, {"Refund_Pct", type number}, {"Bundle_Accept_Pct", type number}, {"Single_Accept_Pct", type number}, {"Bundle_Rev_RM", type number}, {"Single_Rev_RM", type number}}, "en-US")
+				in
+				    ChangedType
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation

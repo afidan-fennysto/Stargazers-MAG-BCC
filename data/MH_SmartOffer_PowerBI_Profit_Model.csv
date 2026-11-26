@@ -1,0 +1,4 @@
+Scenario,Digital_Reach_Pct,Attach_Lift_pp,Avg_Order_RM,Extra_Sales_RM_M,Gross_Profit_75Pct_RM_M,Yr1_System_Cost_RM_M,Yr2_Recurring_Cost_RM_M,Yr1_Net_Profit_RM_M,Yr2_Net_Profit_RM_M,Extra_RM_Per_Pax,Yr1_ROI_x,Payback_Months
+Safe Case,60,2.0,75,16.7,12.6,4.2,1.1,8.4,11.5,0.9,2.0,4.0
+Normal Case,65,3.5,85,36.0,27.0,4.2,1.1,22.8,25.9,1.94,5.4,2.2
+Best Case,70,4.5,95,55.7,41.7,4.2,1.1,37.5,40.6,2.99,8.9,1.3

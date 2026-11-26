@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "MH_SmartOffer"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "07852d52-adb8-5704-b055-389a9feee4a6"
+  }
+}
