@@ -13,13 +13,22 @@ A one-page executive dashboard comparing the **Old Way (Static)** offers with **
 | `MH_SmartOffer.Report/` | Report in PBIR format and the custom theme (`StaticResources/RegisteredResources/MH_SmartOffer_Theme.json`) |
 | `data/` | The two source CSVs |
 
+The data rows (same as `data/*.csv`) are stored inside the Power Query queries, so the model refreshes in the Power BI web service with no gateway or credentials.
+
+### Open it in the browser (Mac friendly): Fabric Git integration
+
+Needs a work or school Microsoft account (personal Gmail/Outlook accounts can't sign in to Power BI) and a Fabric trial.
+
+1. Sign in at https://app.powerbi.com. Start the free trial: **profile picture (top right) → Start trial** (Fabric trial).
+2. **Workspaces → + New workspace**, name it `Stargazers MAG-BCC`. Under **Advanced → License mode**, pick **Trial** (Fabric capacity). Apply.
+3. Workspace **Settings → Git integration → GitHub → Add account**. Paste a GitHub personal access token with access to this repo, and the URL `https://github.com/afidan-fennysto/Stargazers-MAG-BCC`. Choose branch `main`, leave the Git folder empty (root). **Connect and sync.**
+4. `MH_SmartOffer` (semantic model) and `MH_SmartOffer` (report) appear in the workspace. Open the **semantic model → Refresh now**, wait for it to finish, then open the **report**.
+
 ### Open it in Power BI Desktop (Windows)
 
-1. **Enable the project format (one time).** Open Power BI Desktop → *File → Options and settings → Options → Preview features*. Tick **Power BI Project (.pbip) save option**, **Store semantic model using TMDL format** and **Store reports using enhanced metadata format (PBIR)**. Restart Power BI Desktop.
-2. **Open and refresh.** Download or clone this repo, then *File → Open* → `MH_SmartOffer.pbip`. Click **Refresh** on the ribbon (Home → Refresh) to load the data.
-   - The queries read the CSVs from the `DataFolder` parameter (default `C:\MH_SmartOffer\data`). To use your own copy, go to *Home → Transform data → Edit parameters* and point it at this repo's `data` folder.
-   - If the CSVs are not found, each query uses the same data embedded in it, so the report still loads.
-3. **Save as .pbix (optional).** *File → Save as* → set *Save as type* to **Power BI file (*.pbix)** → Save. Share or submit the `.pbix`.
+1. *File → Options and settings → Options → Preview features*: tick **Power BI Project (.pbip) save option**, **Store semantic model using TMDL format** and **Store reports using enhanced metadata format (PBIR)**. Restart.
+2. *File → Open* → `MH_SmartOffer.pbip`, then **Home → Refresh**.
+3. Optional: *File → Save as* → **Power BI file (*.pbix)**.
 
 ### Page layout
 

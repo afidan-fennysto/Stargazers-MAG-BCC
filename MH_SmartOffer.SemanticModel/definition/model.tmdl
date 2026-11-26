@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["DataFolder","MH_SmartOffer_PowerBI_Pilot_Data","MH_SmartOffer_PowerBI_Profit_Model"]
+annotation PBI_QueryOrder = ["MH_SmartOffer_PowerBI_Pilot_Data","MH_SmartOffer_PowerBI_Profit_Model"]
 
 ref table MH_SmartOffer_PowerBI_Pilot_Data
 ref table MH_SmartOffer_PowerBI_Profit_Model

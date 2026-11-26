@@ -1,5 +1,0 @@
-/// Folder that holds the two CSV files (no trailing backslash). If the files are not found, the report falls back to the identical data embedded in each query.
-expression DataFolder = "C:\MH_SmartOffer\data" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-	lineageTag: b1987207-5ab7-5554-bfb3-4f1dfdc0bf9e
-
-	annotation PBI_ResultType = Text
